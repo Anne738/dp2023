@@ -22,7 +22,7 @@ public class ServletOne extends HttpServlet {
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        out.print(someJson);
+        out.print("[" +someJson + "]");
         out.flush();
     }
 }

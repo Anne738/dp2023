@@ -9,11 +9,11 @@ import { Element } from '../interfaces/element';
 })
 export class Service1Service {
 
-  url:string="http://localhost:8080/lab1b/servise"
+  url:string="http://localhost:8888/lab1/servlet"
 
   constructor(private http:HttpClient) { }
 
-  getEntities():Observable<Element[]>{
+  getElem():Observable<Element[]>{
     return this.http.get<Element[]>(this.url);
   }
 }

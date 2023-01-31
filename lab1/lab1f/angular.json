@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "C:../lab1b/src/main/webapp",
+            "outputPath": "../lab1b/src/main/webapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [

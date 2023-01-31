@@ -14,7 +14,7 @@ export class ElementsComponent {
   constructor(private service:Service1Service){}
 
   getElem():void{
-    this.service.getEntities().subscribe(
+    this.service.getElem().subscribe(
       (elements)=>{
         this.elemList=elements;
       }
