@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Element } from '../interfaces/element';
 import { Service1Service } from '../services/service1.service';
 
@@ -13,7 +13,7 @@ export class ElementsComponent {
 
   constructor(private service:Service1Service){}
 
-  getElem():void{
+  ngOnInit(): void {
     this.service.getElem().subscribe(
       (elements)=>{
         this.elemList=elements;

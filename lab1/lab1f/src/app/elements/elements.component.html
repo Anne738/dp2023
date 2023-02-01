@@ -1,10 +1,38 @@
-<p>elements works!</p>
+<section class="products" id="products">
+    <div class="heading">
+        <h2>We collect on</h2>
+    </div>
 
-<a href="./servlet">ServletOne</a>
+    <div class="products_container">
+        <div class="box">
+            <!-- <img src="img/ja.jpeg" alt="JAVELIN"> -->
+            <!-- <a href="./servlet">ServletOne</a> -->
+            <!-- <button (click)="getElem()">Get elements</button> -->
+            <ul>
+                <li *ngFor="let ent of elemList">
+                    <img src="{{ent.images}}" alt="">
+                    <h4>{{ent.price}}</h4>
+                    <h3>{{ent.name}}</h3>
+                </li>
+            </ul>
+        </div>
 
-<button (click)="getElem()">Get elements</button>
-<ul>
-    <li *ngFor="let ent of elemList">
-        Name: {{ent.name}}, Price: {{ent.price}}
-    </li>
-</ul>
+        <!-- <div class="box">
+            <img src="img/nlaw.jpeg" alt="NLAW">
+            <h4>27000$</h4>
+            <h3>NLAW</h3>
+        </div>
+
+        <div class="box">
+            <img src="img/st.png" alt="Stugna-P">
+            <h4>20000$</h4>
+            <h3>Stugna-P</h3>
+        </div>
+
+        <div class="box">
+            <img src="img/kor.png" alt="Korsar">
+            <h4>120000$</h4>
+            <h3>Korsar</h3>
+        </div> -->
+    </div>
+</section>

@@ -15,14 +15,14 @@ public class ServletOne extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Element entity = new Element("JAVELIN", 178000 );
+        Element entity = new Element( "assets/ja.jpeg", 178000, "JAVELIN" );
 
         String someJson = new Gson().toJson(entity);
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        out.print("[" +someJson + "]");
+        out.print("[" + someJson + "]");
         out.flush();
     }
 }

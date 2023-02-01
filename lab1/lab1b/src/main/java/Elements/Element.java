@@ -4,9 +4,14 @@ public class Element {
     private String name;
     private int price;
 
-    public Element(String name, int price) {
+    private  String images;
+
+
+
+    public Element(String images, int price, String name) {
         this.name = name;
         this.price = price;
+        this.images = images;
     }
 
     public String getName() {
@@ -25,8 +30,16 @@ public class Element {
         this.price = price;
     }
 
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
+
     public String toString() {
-        return "{\"Name\": \""+name+"\",\"Price\": "+price+" }";
+        return "{\"Images\": \""+images+"\", \"Price\": \""+price+"\", \"Name\": "+name+"}";
     }
 
 }
