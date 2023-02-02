@@ -16,10 +16,10 @@ header{
     align-items: center;
     padding: 18px 100px;
     transition: 0.5s linear;
-    header.shadow{
-        background: $text-color;
-        box-shadow: $box-shadow;
-    }
+    // header.shadow{
+    //     background: $text-color;
+    //     box-shadow: $box-shadow;
+    // }
     .logo img{
         width: 50px;
     }
@@ -39,31 +39,31 @@ header{
             text-transform: uppercase;
             font-weight: 500;
         }
-    }
-    a:hover{
-        background: #0000009d;
-        border-radius: 0.2rem;
-        transition: 0.2s all linear;
-    }
-    .header_icon{
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 10000;
-    display: flex;
-    column-gap: 0.8rem;
-    .cart{
-        position: relative;
-        .cart_amount{
-            position: absolute;
-            top: 0; right: 3px;
-            font-size: .6rem;
-            background-color: rgb(119, 115, 200);
-            color: $main-color;
-            border-radius: .4rem;
-            padding: 3px;
-            display: none;
+        a:hover{
+            background: #0000009d;
+            border-radius: 0.2rem;
+            transition: 0.2s all linear;
         }
     }
+    .header_icon{
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10000;
+        display: flex;
+        column-gap: 0.8rem;
+        .cart{
+            position: relative;
+            .cart_amount{
+                position: absolute;
+                top: 0; right: 3px;
+                font-size: .6rem;
+                background-color: rgb(119, 115, 200);
+                color: $main-color;
+                border-radius: .4rem;
+                padding: 3px;
+                display: none;
+            }
+        }
     .bx{
         color: $bg-color;
     }
@@ -78,22 +78,22 @@ header{
         transform: translate(-50%);
         background: $bg-color;
         width: 100%;
+        input{
+            padding: 20px;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 1rem;
+            color: $main-color;
+        }  
+        input::placeholder{
+            font-size: 1rem;
+            font-weight: 500;
+        }  
     }
     .search_box.active{
         top: 110%;
         box-shadow: $box-shadow;
         transition: 0.2s all linear;
-    }
-    input{
-        padding: 20px;
-        border: none;
-        outline: none;
-        width: 100%;
-        font-size: 1rem;
-        color: $main-color;
-    }  
-    input::placeholder{
-        font-size: 1rem;
-        font-weight: 500;
     }    
 }

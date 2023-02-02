@@ -10,10 +10,6 @@ header {
   padding: 18px 100px;
   transition: 0.5s linear;
 }
-header header.shadow {
-  background: #011627;
-  box-shadow: 2px 2px 10px 4px #847cce;
-}
 header .logo img {
   width: 50px;
 }
@@ -34,7 +30,7 @@ header .navbar a {
   text-transform: uppercase;
   font-weight: 500;
 }
-header a:hover {
+header .navbar a:hover {
   background: rgba(0, 0, 0, 0.6156862745);
   border-radius: 0.2rem;
   transition: 0.2s all linear;
@@ -75,12 +71,7 @@ header .search_box {
   background: #cefcad;
   width: 100%;
 }
-header .search_box.active {
-  top: 110%;
-  box-shadow: 2px 2px 10px 4px #847cce;
-  transition: 0.2s all linear;
-}
-header input {
+header .search_box input {
   padding: 20px;
   border: none;
   outline: none;
@@ -88,15 +79,20 @@ header input {
   font-size: 1rem;
   color: #e6e6ef;
 }
-header input::-moz-placeholder {
+header .search_box input::-moz-placeholder {
   font-size: 1rem;
   font-weight: 500;
 }
-header input:-ms-input-placeholder {
+header .search_box input:-ms-input-placeholder {
   font-size: 1rem;
   font-weight: 500;
 }
-header input::placeholder {
+header .search_box input::placeholder {
   font-size: 1rem;
   font-weight: 500;
+}
+header .search_box.active {
+  top: 110%;
+  box-shadow: 2px 2px 10px 4px #847cce;
+  transition: 0.2s all linear;
 }/*# sourceMappingURL=header.component.css.map */
