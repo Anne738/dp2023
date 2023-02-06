@@ -1,2 +1,8 @@
-Elements\Element.class
+crud\FileCrud.class
+fileIO\fileIOInterface.class
+Servlets\ServletConfig.class
 Servlets\ServletOne.class
+crud\Lab2CrudInterface.class
+Servlets\ServletConfigInterface.class
+fileIO\FileIO.class
+Elements\Element.class

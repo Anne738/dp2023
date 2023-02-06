@@ -16,10 +16,8 @@ header{
     align-items: center;
     padding: 18px 100px;
     transition: 0.5s linear;
-    // header.shadow{
-    //     background: $text-color;
-    //     box-shadow: $box-shadow;
-    // }
+    background: $text-color;
+    box-shadow: $box-shadow;
     .logo img{
         width: 50px;
     }
