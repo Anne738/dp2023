@@ -12,9 +12,9 @@ export class FormComponent {
 
   constructor(private service:Service1Service){}
 
-  name: string = '';
   images: string = '';
   price: number = 0;
+  name: string = '';
 
 
   getName(val: string) {
@@ -29,10 +29,10 @@ export class FormComponent {
     this.price = parseInt(f.value.price)
   }
 
-  OnClick(): void {
-    console.log(this.name)
+  OnClick(): void { 
     console.log(this.images)
     console.log(this.price)
+    console.log(this.name)
     this.service.postdata( this.images, this.price, this.name );
   }
 }

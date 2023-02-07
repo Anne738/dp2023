@@ -19,6 +19,6 @@ public class FileCrud implements Lab2CrudInterface {
 
     @Override
     public void updateElement(Element element) {
-        fio.seveToFile(element);
+        fio.saveToFile(element);
     }
 }

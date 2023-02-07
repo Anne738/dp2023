@@ -15,7 +15,7 @@ public class FileIO implements fileIOInterface{
     private String fileName="file.txt";
 
     @Override
-    public void seveToFile(Object object) {
+    public void saveToFile(Object object) {
 
         try {
             FileOutputStream fos = new FileOutputStream(fileName);

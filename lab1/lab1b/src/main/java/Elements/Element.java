@@ -7,18 +7,18 @@ public class Element implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
-
-    private String name;
-    private int price;
-
     private  String images;
+    private int price;
+    private String name;
+
+
 
 
 
     public Element(String images, int price, String name) {
-        this.name = name;
-        this.price = price;
         this.images = images;
+        this.price = price;
+        this.name = name;
     }
 
     public String getName() {
@@ -46,7 +46,7 @@ public class Element implements Serializable {
     }
 
     public String toString() {
-        return "{\"Images\": \""+images+"\", \"Price\": \""+price+"\", \"Name\": "+name+"}";
+        return "{\"Images\": \""+images+"\", \"Price\": "+price+", \"Name\": \""+name+"\"}";
     }
 
 }
