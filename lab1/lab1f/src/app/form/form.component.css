@@ -2,173 +2,64 @@ section {
   padding: 50px 100px;
 }
 
-.form .edit-form {
-  margin-left: 32%;
-  margin-top: 75px;
-}
-.form .small_fields {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-.form .Description {
-  width: 670px;
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  border: none;
-  border-bottom: 1px solid #757575;
-}
-.form .Description:focus {
-  outline: none;
-}
-.form .group {
+.form .edit-form .pole .form-control {
   position: relative;
-  margin-bottom: 45px;
+  margin: 20px 0 40px;
+  width: 190px;
 }
-.form .input {
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 300px;
-  border: none;
-  border-bottom: 1px solid #757575;
-}
-.form .input:focus {
-  outline: none;
-}
-.form label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
+.form .edit-form .pole .form-control label {
   position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.form .input:focus ~ label,
-.form .input:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #e0af1a;
-}
-.form .Description:focus ~ label,
-.form .Description:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #e0af1a;
-}
-.form .bar {
-  position: relative;
-  display: block;
-  width: 315px;
-}
-.form .bar:before,
-.form .bar:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #e0af1a;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.form .bar:before {
-  left: 50%;
-}
-.form .bar:after {
-  right: 50%;
-}
-.form .barx:before,
-.form .barx:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #e0af1a;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.form .barx:before {
-  left: 50%;
-}
-.form .barx:after {
-  right: 50%;
-}
-.form .input:focus ~ .bar:before,
-.form .input:focus ~ .bar:after {
-  width: 50%;
-}
-.form .Description:focus ~ .barx:before,
-.form .Description:focus ~ .barx:after {
-  width: 50%;
-}
-.form .highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
+  top: 15px;
   left: 0;
   pointer-events: none;
-  opacity: 0.5;
 }
-.form input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
+.form .edit-form .pole .form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #847cce;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.form .highlightx {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
+.form .edit-form .pole .form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #847cce solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #847cce;
 }
-.form input:focus ~ .highlightx {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
+.form .edit-form .pole .form-control input:focus,
+.form .edit-form .pole .form-control input:valid {
+  outline: 0;
+  border-bottom-color: #cefcad;
 }
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: #e0af1a;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
+.form .edit-form .pole .form-control input:focus + label span,
+.form .edit-form .pole .form-control input:valid + label span {
+  color: #cefcad;
+  transform: translateY(-30px);
 }
-@keyframes inputHighlighter {
-  from {
-    background: #e0af1a;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-.form .Send {
-  margin-left: 45%;
-  width: 150px;
-  height: 50px;
-  border-radius: 3px;
-  border: 3px solid #fff;
-  background-color: #fea526;
-  color: #fff;
-  cursor: pointer;
-  font-family: "Oswald", sans-serif;
-  font-size: 15px;
+.form button {
+  padding: 1.3em 3em;
+  font-size: 12px;
   text-transform: uppercase;
-  font-weight: 100;
-  transition-duration: 0.5s;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #847cce;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
-.form .Send:hover {
-  background-color: #9c681f;
+.form button:hover {
+  background-color: #847cce;
+  box-shadow: 0px 15px 20px rgb(97, 105, 180);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.form button:active {
+  transform: translateY(-1px);
 }/*# sourceMappingURL=form.component.css.map */

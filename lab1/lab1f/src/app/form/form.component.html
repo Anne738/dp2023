@@ -1,32 +1,26 @@
 <section class="form">
     <form class="edit-form">
         
-        <div class="small_fields">
-            <div class="group">      
-                <input type="text" #img (keyup)="getImg(img.value)" name="img" required class="input">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Img</label>
+        <div class="pole">
+            <div class="form-control"> 
+                <input type="text" #img (keyup)="getImg(img.value)" name="img" required class="input">     
+                <label><span style="transition-delay:0ms">I</span><span style="transition-delay:50ms">m</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">g</span><span style="transition-delay:200ms">e</span></label>
             </div>
         </div>
             
-        <div class="small_fields">
+        <div class="pole">
             <form #f="ngForm" (keyup)="getPrice(f)">
-                <div class="group">      
+                <div class="form-control">
                     <input type="number" name="price" ngModel  required class="input">
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Price</label>
+                    <label><span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">r</span><span style="transition-delay:100ms">i</span><span style="transition-delay:150ms">c</span><span style="transition-delay:200ms">e</span></label>     
                 </div>
             </form>
         </div>
 
-        <div class="small_fields">
-            <div class="group">      
+        <div class="pole">
+            <div class="form-control">
                 <input type="text" #box (keyup)="getName(box.value)" name="name" required class="input">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Name</label>
+                <label><span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span></label>    
             </div>
         </div>
                 
@@ -36,21 +30,3 @@
     <button (click)="OnClick()" class="Send" >Add</button>
 
 </section>
-<!-- 
-<div class="container">
-    <form action="">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" #box (keyup)="getName(box.value)" name="name" required class="form-control" id="name">
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" #pr ()="getPrice(pr)" name="price" required class="form-control" id="price">
-        </div>
-        <div>
-            <label for="img">Choose image</label>
-            <input type="text" #img (keyup)="getImg(img.value)" name="img" required class="form-control" id="img">
-        </div>
-        <button type="submit" class="btn btn-success">Add</button>
-    </form>
-</div> -->
