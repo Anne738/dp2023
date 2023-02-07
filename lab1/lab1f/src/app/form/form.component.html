@@ -1,39 +1,39 @@
 <section class="form">
-<form class="edit-form">
-    
-    <div class="small_fields">
-        <div class="group">      
-            <input type="text" #img (keyup)="getImg(img.value)" name="img" required class="input">
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>Img</label>
-        </div>
-    </div>
+    <form class="edit-form">
         
-    <div class="small_fields">
-        <form #f="ngForm" (keyup)="getPrice(f)">
+        <div class="small_fields">
             <div class="group">      
-                <input type="number" name="price" ngModel  required class="input">
+                <input type="text" #img (keyup)="getImg(img.value)" name="img" required class="input">
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>Price</label>
+                <label>Img</label>
             </div>
-        </form>
-    </div>
-
-    <div class="small_fields">
-        <div class="group">      
-            <input type="text" #box (keyup)="getName(box.value)" name="name" required class="input">
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>Name</label>
         </div>
-    </div>
-             
-</form>
-    
+            
+        <div class="small_fields">
+            <form #f="ngForm" (keyup)="getPrice(f)">
+                <div class="group">      
+                    <input type="number" name="price" ngModel  required class="input">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Price</label>
+                </div>
+            </form>
+        </div>
 
-<button (click)="OnClick()" class="Send" >Add</button>
+        <div class="small_fields">
+            <div class="group">      
+                <input type="text" #box (keyup)="getName(box.value)" name="name" required class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Name</label>
+            </div>
+        </div>
+                
+    </form>
+        
+
+    <button (click)="OnClick()" class="Send" >Add</button>
 
 </section>
 <!-- 

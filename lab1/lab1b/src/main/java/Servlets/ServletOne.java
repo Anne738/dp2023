@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 @WebServlet("/servlet")
 public class ServletOne extends HttpServlet {
@@ -25,8 +26,19 @@ public class ServletOne extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ArrayList<Element> data = new ArrayList<Element>();
+        data.add(lab2Crud.readElement());
+
+        String mydata = new Gson().toJson(data);
+
         PrintWriter out = response.getWriter();
-        out.println("["+lab2Crud.readElement()+"]");
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        out.print(mydata);
+        out.flush();
+//        PrintWriter out = response.getWriter();
+//        out.println("["+lab2Crud.readElement()+"]");
 //        Element entity = new Element( "assets/ja.jpeg", 178000, "JAVELIN" );
 //
 //        String someJson = new Gson().toJson(entity);
