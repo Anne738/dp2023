@@ -1,0 +1,7 @@
+<div *ngIf="element">
+    <h3>Update</h3>
+    <input type="text" [(ngModel)]="element.img"><br><br>
+    <input type="number" [(ngModel)]="element.price"><br><br>
+    <input type="text" [(ngModel)]="element.name"><br><br>
+    <button (click)="updateData()"> Update </button> 
+</div>

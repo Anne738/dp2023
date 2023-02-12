@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Element } from '../interfaces/element';
 
@@ -10,15 +10,29 @@ import { Element } from '../interfaces/element';
 export class Service1Service { 
   url:string="http://localhost:8888/lab1/servlet"
 
+  list = new BehaviorSubject<Element[]>([])
+
   constructor(private http:HttpClient) { }
 
   getElem():Observable<Element[]>{
     return this.http.get<Element[]>(this.url);
   }
 
-  public postdata( Img: Object, Price: Object, Name: Object) {
-    this.http.put(this.url + "?images="+Img+"&price="+Price+"&name="+Name, Price).subscribe(data => {
-      console.log(data);
-    });
+  postdata(elem:Element):Observable<Element[]>{
+    return this.http.post<Element[]>(this.url, elem);
   }
+
+  putdata(elem:Element):Observable<Element[]>{
+    return this.http.put<Element[]>(this.url+"/"+elem.name, elem);
+  }
+
+  deletedata(elem:Element):Observable<Element[]>{
+    return this.http.delete<Element[]>(this.url+"/"+elem.name);
+  }
+
+  setList(list:Element[]){
+    this.list.next(list);
+  }
+
+  
 }

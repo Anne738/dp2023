@@ -1,0 +1,17 @@
+<h2>{{title}}</h2>
+<ul>
+    <li *ngFor="let u of entitityList" (click)="onSelect(u)">
+        {{u.image}}. {{u.price}}. {{u.name}}
+        <span (click)="deleteElem(u)">delete</span>
+    </li>
+</ul>
+
+<h3 (click)="showAddForm=!showAddForm">Add elem</h3>
+<form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addElem(form1.value)">
+    <input type="text" name="image" ngModel><br><br>
+    <input type="number" name="price" ngModel><br><br>
+    <input type="text" name="name" ngModel><br><br>
+    <input type="submit" value="Add entity">
+</form>
+
+<app-update [elem]="selectedElem" (updated)="updateElem()"></app-update>

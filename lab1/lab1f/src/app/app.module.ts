@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule, NgForm } from '@angular/forms';
+import { UpdateComponent } from './update/update.component';
+import { ElemlistComponent } from './elemlist/elemlist.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormsModule, NgForm } from '@angular/forms';
     ElementsComponent,
     HeaderComponent,
     HomeComponent,
-    FormComponent
+    FormComponent,
+    UpdateComponent,
+    ElemlistComponent
   ],
   imports: [
     BrowserModule,

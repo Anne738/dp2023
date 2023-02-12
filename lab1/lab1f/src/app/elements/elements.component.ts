@@ -18,6 +18,6 @@ export class ElementsComponent {
       (elements)=>{
         this.elemList=elements;
       }
-    )
+    );
   }
 }
