@@ -39,8 +39,7 @@ section {
   background: #43c6e4;
   box-shadow: 0 0 0 10px rgba(67, 198, 228, 0.3333333333);
   position: absolute;
-  -webkit-animation: animate 12s linear infinite;
-          animation: animate 12s linear infinite;
+  animation: animate 12s linear infinite;
   transform: translateY(360vh);
 }
 .home .element li:nth-child(even) {
@@ -49,107 +48,81 @@ section {
 }
 .home .element li:nth-child(1) {
   left: 3vw;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  animation-delay: 1s;
 }
 .home .element li:nth-child(2) {
   left: 8vw;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  animation-delay: 5s;
 }
 .home .element li:nth-child(3) {
   left: 14vw;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  animation-delay: 2s;
 }
 .home .element li:nth-child(4) {
   left: 20vw;
-  -webkit-animation-delay: 11s;
-          animation-delay: 11s;
+  animation-delay: 11s;
 }
 .home .element li:nth-child(5) {
   left: 25vw;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  animation-delay: 4s;
 }
 .home .element li:nth-child(6) {
   left: 30vw;
 }
 .home .element li:nth-child(7) {
   left: 35vw;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  animation-delay: 6s;
 }
 .home .element li:nth-child(8) {
   left: 40vw;
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
+  animation-delay: 8s;
 }
 .home .element li:nth-child(9) {
   left: 45vw;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 .home .element li:nth-child(10) {
   left: 50vw;
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
+  animation-delay: 10s;
 }
 .home .element li:nth-child(11) {
   left: 55vw;
-  -webkit-animation-delay: 7s;
-          animation-delay: 7s;
+  animation-delay: 7s;
 }
 .home .element li:nth-child(12) {
   left: 60vw;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  animation-delay: 2s;
 }
 .home .element li:nth-child(13) {
   left: 65vw;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  animation-delay: 6s;
 }
 .home .element li:nth-child(14) {
   left: 70vw;
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
+  animation-delay: 8s;
 }
 .home .element li:nth-child(15) {
   left: 75vw;
 }
 .home .element li:nth-child(16) {
   left: 79vw;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 .home .element li:nth-child(17) {
   left: 82vw;
-  -webkit-animation-delay: 9s;
-          animation-delay: 9s;
+  animation-delay: 9s;
 }
 .home .element li:nth-child(18) {
   left: 87vw;
-  -webkit-animation-delay: 11s;
-          animation-delay: 11s;
+  animation-delay: 11s;
 }
 .home .element li:nth-child(19) {
   left: 91vw;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  animation-delay: 6s;
 }
 .home .element li:nth-child(20) {
   left: 95vw;
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
-}
-@-webkit-keyframes animate {
-  0% {
-    transform: translateY(40vh) scale(0);
-  }
-  100% {
-    transform: translateY(-50vh) scale(1);
-  }
+  animation-delay: 10s;
 }
 @keyframes animate {
   0% {

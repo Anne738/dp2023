@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,10 +7,12 @@ import { ElementsComponent } from './elements/elements.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { FormComponent } from './form/form.component';
-import { FormsModule, NgForm } from '@angular/forms';
-import { UpdateComponent } from './update/update.component';
+//import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
 import { ElemlistComponent } from './elemlist/elemlist.component';
+import { UpdateComponent } from './update/update.component';
+import { NgModule } from '@angular/core';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +20,9 @@ import { ElemlistComponent } from './elemlist/elemlist.component';
     ElementsComponent,
     HeaderComponent,
     HomeComponent,
-    FormComponent,
+    //FormComponent,
     UpdateComponent,
-    ElemlistComponent
+    ElemlistComponent,
   ],
   imports: [
     BrowserModule,

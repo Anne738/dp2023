@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Element } from '../interfaces/element';
 import { Service1Service } from '../services/service1.service';
-
+import { Element } from '../interfaces/element';
+ 
 @Component({
-  selector: 'app-elements',
-  templateUrl: './elements.component.html',
-  styleUrls: ['./elements.component.scss']
+  selector: 'app-elemlist',
+  templateUrl: './elemlist.component.html',
+  styleUrls: ['./elemlist.component.scss']
 })
 export class ElemlistComponent implements OnInit {
 

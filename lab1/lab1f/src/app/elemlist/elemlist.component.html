@@ -1,7 +1,7 @@
-<h2>{{title}}</h2>
+<h2>букашка</h2>
 <ul>
-    <li *ngFor="let u of entitityList" (click)="onSelect(u)">
-        {{u.image}}. {{u.price}}. {{u.name}}
+    <li *ngFor="let u of elemList" (click)="onSelect(u)">
+        {{u.images}}. {{u.price}}. {{u.name}}
         <span (click)="deleteElem(u)">delete</span>
     </li>
 </ul>
@@ -14,4 +14,4 @@
     <input type="submit" value="Add entity">
 </form>
 
-<app-update [elem]="selectedElem" (updated)="updateElem()"></app-update>
+<app-update [element]="selectedElem" (updated)="updateElem()"></app-update>
