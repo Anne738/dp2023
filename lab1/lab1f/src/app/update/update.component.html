@@ -1,11 +1,26 @@
-<div>
-    <form action="">
-        <div *ngIf="element">
-            <h3>Update</h3>
-            <input type="text" [(ngModel)]="element.images"><br><br>
-            <input type="number" [(ngModel)]="element.price"><br><br>
-            <input type="text" [(ngModel)]="element.name"><br><br>
-            <button (click)="updateData()"> Update </button> 
-        </div>
-    </form>
-</div>
+<section class="updated">
+    <div>
+        <form action="">
+            <div *ngIf="element">
+                <h3>UPDATE</h3>
+                
+                <div class="form-control">
+                    <input type="hidden" [(ngModel)]="element.id">
+                </div>
+                
+                <div class="form-control">
+                    <input type="text" [(ngModel)]="element.images">
+                </div>
+                
+                <div class="form-control">
+                    <input type="number" [(ngModel)]="element.price">
+                </div>
+                
+                <div class="form-control">
+                    <input type="text" [(ngModel)]="element.name">
+                </div>
+                <button (click)="updateData()"> Update </button> 
+            </div>
+        </form>
+    </div>
+</section>

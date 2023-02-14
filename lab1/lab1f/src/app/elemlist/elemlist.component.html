@@ -1,17 +1,33 @@
-<h2>букашка</h2>
-<ul>
-    <li *ngFor="let u of elemList" (click)="onSelect(u)">
-        {{u.images}}. {{u.price}}. {{u.name}}
-        <span (click)="deleteElem(u)">delete</span>
-    </li>
-</ul>
+<section class="elem">
 
-<h3 (click)="showAddForm=!showAddForm">Add elem</h3>
-<form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addElem(form1.value)">
-    <input type="text" name="image" ngModel><br><br>
-    <input type="number" name="price" ngModel><br><br>
-    <input type="text" name="name" ngModel><br><br>
-    <input type="submit" value="Add entity">
-</form>
+    <ul>
+        <li *ngFor="let u of elemList" (click)="onSelect(u)">
+            {{u.id}}. {{u.images}}. {{u.price}}. {{u.name}}
+            <span (click)="deleteElem(u)">delete</span>
+        </li>
+    </ul>
 
-<app-update [element]="selectedElem" (updated)="updateElem()"></app-update>
+    <h3 (click)="showAddForm=!showAddForm">ADD ELEMENT</h3>
+    <form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addElem(form1.value)">
+        <input type="hidden" name="id" ngModel>
+        <div class="form-control">
+            <div class="form-control"></div>
+            <input type="text" name="image" ngModel>
+            <label><span style="transition-delay:0ms">I</span><span style="transition-delay:50ms">m</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">g</span><span style="transition-delay:200ms">e</span></label>
+        </div>
+        <div class="form-control">
+            <input type="number" name="price" ngModel>
+            <label><span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">r</span><span style="transition-delay:100ms">i</span><span style="transition-delay:150ms">c</span><span style="transition-delay:200ms">e</span></label>
+        </div>
+        
+        <div class="form-control">
+            <input type="text" name="name" ngModel>
+            <label><span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span></label>
+        </div>
+        
+        <input class="button" type="submit" value="Add">
+    </form>
+
+    <app-update [element]="selectedElem" (updated)="updateElem()"></app-update>
+
+</section>

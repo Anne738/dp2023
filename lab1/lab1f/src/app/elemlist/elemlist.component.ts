@@ -30,6 +30,7 @@ export class ElemlistComponent implements OnInit {
         this.service.setList(elements);
       }
     );
+    
   }
   addElem(elem:Element){
     this.service.postdata(elem).subscribe(
@@ -37,9 +38,10 @@ export class ElemlistComponent implements OnInit {
         this.updateElem();
       }
     );
+    //this.refreshPage();
   }
   onSelect(elem:Element){
-    if (this.selectedElem && elem.name==this.selectedElem.name){
+    if (this.selectedElem && elem.id==this.selectedElem.id){
       this.selectedElem=undefined;
     }
     else{
@@ -52,5 +54,13 @@ export class ElemlistComponent implements OnInit {
         this.updateElem();
       }
     );
+    //this.refreshPage();
   }
+
+
+  refreshPage(): void{
+    window.location.reload();
+  }
+
+
 }

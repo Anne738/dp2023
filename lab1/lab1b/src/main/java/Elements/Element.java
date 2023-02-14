@@ -7,18 +7,27 @@ public class Element implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
+    private int id;
     private  String images;
     private int price;
     private String name;
 
 
+    public Element(){}
 
-
-
-    public Element(String images, int price, String name) {
+    public Element(int id, String images, int price, String name) {
+        this.id = id;
         this.images = images;
         this.price = price;
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -23,11 +23,11 @@ export class Service1Service {
   }
 
   putdata(elem:Element):Observable<Element[]>{
-    return this.http.put<Element[]>(this.url+"/"+elem.name, elem);
+    return this.http.put<Element[]>(this.url+"/"+elem.id, elem);
   }
 
   deletedata(elem:Element):Observable<Element[]>{
-    return this.http.delete<Element[]>(this.url+"/"+elem.name);
+    return this.http.delete<Element[]>(this.url+"/"+elem.id);
   }
 
   setList(list:Element[]){

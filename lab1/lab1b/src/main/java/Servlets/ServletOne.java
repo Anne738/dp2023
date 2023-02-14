@@ -1,5 +1,6 @@
 package Servlets;
 
+import Elements.ElemList;
 import Elements.Element;
 import com.google.gson.Gson;
 import crud.Lab2CrudInterface;
@@ -11,12 +12,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
-@WebServlet("/servlet")
+@WebServlet("/servlet/*")
 public class ServletOne extends HttpServlet {
 
     ServletConfigInterface servletConfig;
     Lab2CrudInterface lab2Crud;
+
+    FjsonInterface fjs;
 
     public ServletOne() {
         super();
@@ -24,39 +28,45 @@ public class ServletOne extends HttpServlet {
         this.lab2Crud = servletConfig.getCrud();
     }
 
+    private List<Element> data = new ElemList().getElemlist();
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        ArrayList<Element> data = new ArrayList<Element>();
-        data.add(lab2Crud.readElement());
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String mydata = new Gson().toJson(data);
 
-        PrintWriter out = response.getWriter();
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-
+        PrintWriter out = response.getWriter();
         out.print(mydata);
         out.flush();
-//        PrintWriter out = response.getWriter();
-//        out.println("["+lab2Crud.readElement()+"]");
-//        Element entity = new Element( "assets/ja.jpeg", 178000, "JAVELIN" );
-//
-//        String someJson = new Gson().toJson(entity);
-//
-//        PrintWriter out = response.getWriter();
-//        response.setContentType("application/json");
-//        response.setCharacterEncoding("UTF-8");
-//        out.print("[" + someJson + "]");
-//        out.flush();
+
     }
 
-    public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String images = request.getParameter("images");
-        int price = Integer.parseInt(request.getParameter("price"));
-        String name = request.getParameter("name");
+        Element el = fjs.Parse(request);
+        el.setId(fjs.getNextId(data));
+        data.add(el);
+        doGet(request, response);
 
-        lab2Crud.updateElement(new Element(images, price, name));
+    }
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        Element el = fjs.Parse(request);
+        int id = Integer.parseInt(request.getPathInfo().substring(1));
+        response.setContentType("application/json");
+        int index = fjs.getIndexById(id, data);
+        data.set(index,el);
+        doGet(request, response);
+    }
+
+
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws  IOException {
+
+        int id = Integer.parseInt(request.getPathInfo().substring(1));
+        response.setContentType("application/json");
+        int index = fjs.getIndexById(id, data);
+        data.remove(index);
+        doGet(request, response);
     }
 
 
