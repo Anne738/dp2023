@@ -19,13 +19,16 @@ export class UpdateComponent implements OnInit {
 
   updateData(){
     if(this.element) {
-      //console.log(this.element);
       this.service.putdata(this.element).subscribe(
         ()=>{
           this.updated.emit();
         }
       );
     }
+    // this.refreshPage();
+  }
+  refreshPage(): void{
+    window.location.reload();
   }
 
 }

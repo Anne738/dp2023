@@ -4,6 +4,7 @@ import crud.FileCrud;
 import crud.Lab2CrudInterface;
 
 public class ServletConfig implements ServletConfigInterface {
+    Lab2CrudInterface l2ci;
 
     public ServletConfig(){
         this.l2ci = new FileCrud();
@@ -12,7 +13,6 @@ public class ServletConfig implements ServletConfigInterface {
         this.l2ci = l2ci;
     }
 
-    Lab2CrudInterface l2ci;
     @Override
     public Lab2CrudInterface getCrud(){
         return l2ci;

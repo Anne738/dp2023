@@ -33,6 +33,7 @@ export class ElemlistComponent implements OnInit {
     
   }
   addElem(elem:Element){
+    console.log(elem, "xxxxx");
     this.service.postdata(elem).subscribe(
       (elements)=>{
         this.updateElem();

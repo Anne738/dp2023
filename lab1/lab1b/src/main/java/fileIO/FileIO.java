@@ -3,6 +3,7 @@ package fileIO;
 import java.io.*;
 
 public class FileIO implements fileIOInterface{
+    private String fileName="file.txt";
 
     public String getFileName() {
         return fileName;
@@ -12,10 +13,9 @@ public class FileIO implements fileIOInterface{
         this.fileName = fileName;
     }
 
-    private String fileName="file.txt";
 
     @Override
-    public void saveToFile(Object object) {
+    public void savetoFile(Object object) {
 
         try {
             FileOutputStream fos = new FileOutputStream(fileName);

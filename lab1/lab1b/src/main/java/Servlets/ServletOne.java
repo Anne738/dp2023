@@ -11,50 +11,54 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/servlet/*")
 public class ServletOne extends HttpServlet {
-
+    private List<Element> data = new ElemList().getElemlist();
     ServletConfigInterface servletConfig;
-    Lab2CrudInterface lab2Crud;
-
-    FjsonInterface fjs;
+    Lab2CrudInterface crud;
 
     public ServletOne() {
         super();
         this.servletConfig = new ServletConfig();
-        this.lab2Crud = servletConfig.getCrud();
+        this.crud = servletConfig.getCrud();
     }
 
-    private List<Element> data = new ElemList().getElemlist();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String mydata = new Gson().toJson(data);
-
-        response.setContentType("application/json");
         PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+
         out.print(mydata);
         out.flush();
 
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        Element el = fjs.Parse(request);
-        el.setId(fjs.getNextId(data));
+//        String images = request.getParameter("images");
+//        int price = Integer.parseInt(request.getParameter("price"));
+//        String name = request.getParameter("name");
+//        System.out.println(price);
+
+        Element el = crud.Parse(request);
+        el.setId(crud.getNextId(data));
         data.add(el);
         doGet(request, response);
+
 
     }
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        Element el = fjs.Parse(request);
+        Element el = crud.Parse(request);
         int id = Integer.parseInt(request.getPathInfo().substring(1));
         response.setContentType("application/json");
-        int index = fjs.getIndexById(id, data);
+        int index = crud.getIndexById(id, data);
         data.set(index,el);
         doGet(request, response);
     }
@@ -64,7 +68,7 @@ public class ServletOne extends HttpServlet {
 
         int id = Integer.parseInt(request.getPathInfo().substring(1));
         response.setContentType("application/json");
-        int index = fjs.getIndexById(id, data);
+        int index = crud.getIndexById(id, data);
         data.remove(index);
         doGet(request, response);
     }

@@ -39,4 +39,10 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   margin: 0.5rem 0 0.5rem;
+}
+
+@media (max-width: 360px) {
+  .heading h2 {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=elements.component.css.map */

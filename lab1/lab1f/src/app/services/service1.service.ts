@@ -18,8 +18,8 @@ export class Service1Service {
     return this.http.get<Element[]>(this.url);
   }
 
-  postdata(elem:Element):Observable<Element[]>{
-    return this.http.post<Element[]>(this.url, elem);
+  postdata(elem:Element):Observable<Element>{
+    return this.http.post<Element>(this.url, elem);
   }
 
   putdata(elem:Element):Observable<Element[]>{

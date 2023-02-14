@@ -54,8 +54,8 @@ public class Element implements Serializable {
         this.images = images;
     }
 
-    public String toString() {
-        return "{\"Images\": \""+images+"\", \"Price\": "+price+", \"Name\": \""+name+"\"}";
-    }
+//    public String toString() {
+//        return "{\"Id\": \"+id+\", \"Images\": \""+images+"\", \"Price\": "+price+", \"Name\": \""+name+"\"}";
+//    }
 
 }
