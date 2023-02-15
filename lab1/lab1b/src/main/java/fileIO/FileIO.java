@@ -29,6 +29,7 @@ public class FileIO implements fileIOInterface{
     }
     @Override
     public Object loadFromFile(){
+
         Object result = null;
 
         try {
@@ -37,7 +38,7 @@ public class FileIO implements fileIOInterface{
             result = ois.readObject();
             ois.close();
         } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
         return result;

@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ElemlistComponent } from './elemlist/elemlist.component';
 import { UpdateComponent } from './update/update.component';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NgModule } from '@angular/core';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
