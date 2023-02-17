@@ -37,7 +37,7 @@ export class ElemlistComponent implements OnInit {
         this.updateElem();
       }
     );
-    //this.refreshPage();
+    this.refreshPage();
   }
   onSelect(elem:Element){
     if (this.selectedElem && elem.id==this.selectedElem.id){
@@ -53,7 +53,7 @@ export class ElemlistComponent implements OnInit {
         this.updateElem();
       }
     );
-    //this.refreshPage();
+    this.refreshPage();
   }
 
 
