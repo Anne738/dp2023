@@ -16,12 +16,10 @@ export class ElemlistComponent implements OnInit {
 
   constructor(private service:Service1Service){}
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.updateElem();
     this.service.list.subscribe(
-      (list:Element[])=>{
-        this.elemList=list;
-      }
+      (list:Element[])=>{this.elemList=list}
     );
   }
   updateElem() {

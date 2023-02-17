@@ -25,7 +25,7 @@ export class UpdateComponent implements OnInit {
         }
       );
     }
-    // this.refreshPage();
+    this.refreshPage();
   }
   refreshPage(): void{
     window.location.reload();

@@ -41,11 +41,15 @@ public class FileCrud implements Lab2CrudInterface {
     public Element Parse(HttpServletRequest request) {
         Element ent = new Element();
         JsonElement jsonElement = bodyParse(request);
-        System.out.println(jsonElement);
+        //System.out.println(jsonElement);
         ent.setId(jsonElement.getAsJsonObject().get("id").getAsInt());
         ent.setImages(jsonElement.getAsJsonObject().get("images").getAsString());
         ent.setPrice(jsonElement.getAsJsonObject().get("price").getAsInt());
         ent.setName(jsonElement.getAsJsonObject().get("name").getAsString());
+//        ent.setId(0);
+//        ent.setName(jsonElement.getAsJsonObject().get("name").getAsString());
+//        ent.setPrice(jsonElement.getAsJsonObject().get("price").getAsInt());
+//        ent.setImages("g");
         return ent;
     }
 

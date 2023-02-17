@@ -9,10 +9,10 @@ public interface Lab2CrudInterface {
     public Element readEntity();
 
 
-    void updateEntity(Element el);
+    public void updateEntity(Element el);
 
     Element Parse(HttpServletRequest request);
-    int getIndexById(int id, List<Element> le);
+    int getIndexById(int id, List<Element> list);
 
     int getNextId(List<Element> list);
 }

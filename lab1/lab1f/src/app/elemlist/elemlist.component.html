@@ -9,10 +9,10 @@
 
     <h3 (click)="showAddForm=!showAddForm">ADD ELEMENT</h3>
     <form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addElem(form1.value)">
-        <input type="hidden" name="id" ngModel>
+        <input type="hidden" name="id" ngModel="-1">
         <div class="form-control">
             <div class="form-control"></div>
-            <input type="text" name="image" ngModel>
+            <input type="text" name="images" ngModel>
             <label><span style="transition-delay:0ms">I</span><span style="transition-delay:50ms">m</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">g</span><span style="transition-delay:200ms">e</span></label>
         </div>
         <div class="form-control">
