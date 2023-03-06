@@ -1,0 +1,6 @@
+Crud\LabCRUDInterface.class
+Servlets\Helpers.class
+jdbc\Connect.class
+Crud\SqlCRUD.class
+Elements\Element.class
+Servlets\Servlet.class
