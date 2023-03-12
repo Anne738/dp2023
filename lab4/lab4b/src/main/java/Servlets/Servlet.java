@@ -17,13 +17,13 @@ import java.sql.SQLException;
 
 @WebServlet("/servlet/*")
 public class Servlet extends HttpServlet {
-    LabCRUDInterface<Element> crud = new SqlCRUD();
+    //LabCRUDInterface<Element> crud = new SqlCRUD();
+    LabCRUDInterface<Element> crud;
+    //ServletConfigInt servletConfig;
 
     public void init(ServletConfig config) throws ServletException {
         // TODO Auto-generated method stub
-
         crud = new SqlCRUD();
-
     }
 
     public void destroy() {
@@ -33,6 +33,12 @@ public class Servlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+//    public InterfaceServlet() {
+//        super();
+//        this.servletConfig = new ServletConfig();
+//        this.crud = servletConfig.getSqlCRUD();
+//    }
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

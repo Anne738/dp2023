@@ -54,12 +54,12 @@ public class app {
             Session session = sessionFactory.openSession();
             session.beginTransaction();
 
-            session.save(new Element(3, "name3", 170000, "img_new"));
-            session.save(new Element(2, "name2", 200000,"1"));
+            session.save(new Element(1, "assets/ja.jpeg", 178000, "JAVELIN"));
+            session.save(new Element(2, "assets/kor.png", 120000,"KORSAR"));
 
-            Element updateEntity1 = new Element(1, "updated_name_1", 101100, "gg");
-            session.update(updateEntity1);
-            session.delete(new Element(2, "name2", 300300,"1"));
+            //Element updateEntity1 = new Element(1, "updated_name_1", 101100, "gg");
+            //session.update(updateEntity1);
+            //session.delete(new Element(2, "name2", 300300,"1"));
 
             entities = (List<Element>) session.createQuery("from Element").list();
 

@@ -2,14 +2,22 @@ package Crud;
 
 
 import Elements.Element;
+import Servlets.Helpers;
 import jdbc.Connect;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SqlCRUD implements LabCRUDInterface<Element> {
 
+    List<Element> list = new ArrayList<>();
     Connection connection;
 
     public SqlCRUD(){
@@ -26,6 +34,99 @@ public class SqlCRUD implements LabCRUDInterface<Element> {
     }
 
     @Override
+    public void create(Element element) {
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Element.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            int id = Helpers.getNextId(list);
+
+            session.save(new Element(
+                    id,
+                    element.getImages(),
+                    element.getPrice(),
+                    element.getName())
+            );
+
+            session.getTransaction().commit();
+        }
+    }
+
+    @Override
+    public List<Element> read() {
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Element.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            list = (List<Element>) session.createQuery("from Element").list();
+
+            session.getTransaction().commit();
+        }
+
+        return list;
+    }
+
+    @Override
+    public void update(int id, Element element) {
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Element.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            Element updateTent = new Element(
+                    id,
+                    element.getImages(),
+                    element.getPrice(),
+                    element.getName());
+
+            session.update(updateTent);
+
+            session.getTransaction().commit();
+        }
+    }
+
+
+    @Override
+    public void delete(int id){
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Element.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            session.delete(session.get(Element.class, id));
+
+            session.getTransaction().commit();
+            session.close();
+        }
+    }
+
+    /*  *  @Override
     public void create(Element elem) {
         try(
             PreparedStatement st = connection.prepareStatement("INSERT INTO entity.entity (images, price, name) "
@@ -80,4 +181,6 @@ public class SqlCRUD implements LabCRUDInterface<Element> {
             e.printStackTrace();
         }
     }
+*/
+
 }

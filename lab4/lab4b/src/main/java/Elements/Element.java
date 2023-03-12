@@ -1,12 +1,15 @@
 package Elements;
 
-import java.io.Serializable;
-
-public class Element implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
+@Entity
+@Table(name="entity.entity")
+public class Element {
+
+    @Id
     private int id;
     private  String images;
     private int price;
