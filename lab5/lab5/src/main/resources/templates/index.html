@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+</head>
+<body>
+<div align="center">
+    <h1>Admin page</h1>
+    <a href="new">Create new</a>
+    <br>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>image</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="element : ${ListElement}">
+                <td th:text="${element.id}">ID</td>
+                <td th:text="${element.name}">name</td>
+                <td th:text="${element.images}">image</td>
+                <td th:text="${element.price}">price</td>
+                <td>
+                    <a th:href="@{/update/{id}(id=${element.id})}">Update</a>
+                    <br/><br/>
+                    <a th:href="@{/delete/{id}(id=${element.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
