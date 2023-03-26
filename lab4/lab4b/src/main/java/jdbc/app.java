@@ -54,8 +54,8 @@ public class app {
             Session session = sessionFactory.openSession();
             session.beginTransaction();
 
-            session.save(new Element(1, "assets/ja.jpeg", 178000, "JAVELIN"));
-            session.save(new Element(2, "assets/kor.png", 120000,"KORSAR"));
+            //session.save(new Element(1, "assets/ja.jpeg", 178000, "JAVELIN"));
+            //session.save(new Element(2, "assets/kor.png", 120000,"KORSAR"));
 
             //Element updateEntity1 = new Element(1, "updated_name_1", 101100, "gg");
             //session.update(updateEntity1);
