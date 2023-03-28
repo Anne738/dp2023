@@ -32,7 +32,7 @@ public class AppController {
     }
     @GetMapping("/update/{id}")
     public ModelAndView UpdateForm(@PathVariable(name = "id") Long id){
-        ModelAndView mav = new ModelAndView("updated_element");
+        ModelAndView mav = new ModelAndView("edit_elem");
         Element element = service.get(id);
         mav.addObject("element", element);
 
