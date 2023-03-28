@@ -22,6 +22,6 @@ public class ElementService {
         return repo.findById(id).get();
     }
     public void delete(Long id){
-        repo.findById(id);
+        repo.deleteById(id);
     }
 }
