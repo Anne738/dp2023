@@ -1,5 +1,7 @@
-package knu.fit.mit.lab5;
+package knu.fit.mit.lab5.controllers;
 
+import knu.fit.mit.lab5.entity.Element;
+import knu.fit.mit.lab5.services.ElementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package knu.fit.mit.lab5;
+package knu.fit.mit.lab5.entity;
 
 
 import jakarta.persistence.*;
