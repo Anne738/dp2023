@@ -1,0 +1,83 @@
+section {
+  padding: 50px 100px;
+}
+
+.elem ul {
+  list-style: none;
+}
+.elem ul li {
+  padding: 5px;
+}
+.elem ul li span {
+  color: white;
+  background-color: red;
+  padding: 2px;
+  margin-left: 5px;
+}
+.elem h3 {
+  padding-top: 50px;
+}
+.elem .id {
+  display: hidden;
+}
+.elem .form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 190px;
+}
+.elem .form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #847cce solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #847cce;
+}
+.elem .form-control input:focus,
+.elem .form-control input:valid {
+  outline: 0;
+  border-bottom-color: #847cce;
+}
+.elem .form-control input:focus + label span,
+.elem .form-control input:valid + label span {
+  color: #847cce;
+  transform: translateY(-30px);
+}
+.elem .form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+.elem .form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #847cce;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.elem .button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #847cce;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.elem .button:hover {
+  background-color: #847cce;
+  box-shadow: 0px 15px 20px rgb(97, 105, 180);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.elem .button:active {
+  transform: translateY(-1px);
+}/*# sourceMappingURL=elemlist.component.css.map */
