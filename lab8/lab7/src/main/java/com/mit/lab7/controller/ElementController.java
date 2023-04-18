@@ -41,7 +41,7 @@ public class ElementController {
         log.info("[ELEMENT CONTROLLER] | PUT method");
         Element updateElement = elementRepository.findById(id)
                 .orElseThrow(()->{
-                    log.error("[ELEMENT CONTROLLER] | PUT method was failed: not found element with such id - {}", id);
+                    log.error("[ELEMENT CONTROLLER] | PUT method was failed: not found element with such id {}", id);
                     return new ResourceAccessException("Not found element with such id: " + id);
                 });
         updateElement.setImages(updateElement.getImages());
@@ -56,7 +56,7 @@ public class ElementController {
     public void deleteElement(@PathVariable(name = "id") long id){
         log.info("[ELEMENT CONTROLLER] | DELETE method");
         Element delete_element = elementRepository.findById(id).orElseThrow(()->{
-                    log.error("[ELEMENT CONTROLLER] | DELETE method was failed: not found element with such id - {}", id);
+                    log.error("[ELEMENT CONTROLLER] | DELETE method was failed: not found element with such id {}", id);
                     return new ResourceAccessException("Not found element with such id: " + id);
                 });
         elementRepository.deleteById(id);
