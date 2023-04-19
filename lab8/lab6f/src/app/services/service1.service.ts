@@ -9,7 +9,7 @@ import { Http } from '../interfaces/rest.interfaces/http';
   providedIn: 'root'
 })
 export class Service1Service { 
-  url:string="http://localhost:2918/elements"
+  url:string="http://localhost:2918/api/elements"
 
   list = new BehaviorSubject<Element[]>([])
 
