@@ -44,9 +44,9 @@ public class ElementController {
                     log.error("[ELEMENT CONTROLLER] | PUT method was failed: not found element with such id {}", id);
                     return new ResourceAccessException("Not found element with such id: " + id);
                 });
-        updateElement.setImages(updateElement.getImages());
-        updateElement.setPrice(updateElement.getPrice());
-        updateElement.setName(updateElement.getName());
+        updateElement.setImages(newElement.getImages());
+        updateElement.setPrice(newElement.getPrice());
+        updateElement.setName(newElement.getName());
         elementRepository.save(updateElement);
         log.info("[ELEMENT CONTROLLER] after PUT method: element with {} id was changed", id);
         return updateElement;
