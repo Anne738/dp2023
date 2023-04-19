@@ -28,7 +28,7 @@ public class ElementController {
     }
 
     @GetMapping("/get")
-    public List<Element> getAll(){
+    public List<Element> getElement(){
         List<Element> list;
         log.info("[ELEMENT CONTROLLER] | GET method");
         list = elementRepository.findAll();
